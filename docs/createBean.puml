@@ -1,0 +1,24 @@
+@startuml
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: createBean
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: resolveBeforeInstantiation
+note right
+Give BeanPostProcessors a chance
+to return a proxy instead of the target bean instance.
+end note
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: applyBeanPostProcessorsBeforeInstantiation
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: doCreateBean
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: instantiateBean
+
+AbstractAutowireCapableBeanFactory -> SimpleInstantiationStrategy: instantiate
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: applyMergedBeanDefinitionPostProcessors
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: populateBean
+
+
+@enduml
