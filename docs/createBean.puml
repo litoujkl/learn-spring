@@ -1,6 +1,54 @@
 @startuml
+AbstractApplicationContext -> AbstractApplicationContext
+note right
+refresh
+end note
 
-AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: createBean
+AbstractApplicationContext -> AbstractApplicationContext
+note right
+finishBeanFactoryInitialization
+end note
+
+AbstractApplicationContext -> DefaultListableBeanFactory
+note right
+preInstantiateSingletons
+end note
+
+DefaultListableBeanFactory -> AbstractBeanFactory
+note right
+getBean
+end note
+
+AbstractBeanFactory -> AbstractBeanFactory
+note right
+1. doGetBean
+2. getSingleton
+end note
+
+AbstractBeanFactory -> DefaultSingletonBeanRegistry
+note right
+getSingleton
+end note
+
+AbstractBeanFactory -> DefaultSingletonBeanRegistry
+note right
+getSingleton(String beanName, ObjectFactory<?> singletonFactory)
+end note
+
+DefaultSingletonBeanRegistry -> DefaultSingletonBeanRegistry
+note right
+singletonFactory.getObject()
+end note
+
+DefaultSingletonBeanRegistry -> AbstractBeanFactory
+note left
+createBean
+end note
+
+AbstractBeanFactory -> AbstractAutowireCapableBeanFactory
+note left
+createBean
+end note
 
 AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: resolveBeforeInstantiation
 note right
