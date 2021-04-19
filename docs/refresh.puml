@@ -1,0 +1,40 @@
+@startuml
+AbstractApplicationContext -> AbstractApplicationContext: refresh
+
+AbstractApplicationContext -> AbstractApplicationContext: finishBeanFactoryInitialization
+
+AbstractApplicationContext -> DefaultListableBeanFactory: \npreInstantiateSingletons
+
+DefaultListableBeanFactory -> AbstractBeanFactory: \tgetBean
+
+AbstractBeanFactory -> AbstractBeanFactory: \t1. doGetBean \n\t2. getSingleton
+
+AbstractBeanFactory -> DefaultSingletonBeanRegistry: \n\tgetSingleton(String beanName)
+
+AbstractBeanFactory -> DefaultSingletonBeanRegistry: \ngetSingleton(String beanName, ObjectFactory<?> singletonFactory)
+
+DefaultSingletonBeanRegistry -> DefaultSingletonBeanRegistry: \tsingletonFactory.getObject()
+
+DefaultSingletonBeanRegistry -> AbstractBeanFactory: \t\t\t\tcreateBean
+
+AbstractBeanFactory -> AbstractAutowireCapableBeanFactory: \n\t\t\t\tcreateBean
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: resolveBeforeInstantiation
+note right
+Give BeanPostProcessors a chance
+to return a proxy instead of the target bean instance.
+end note
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: doCreateBean
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: createBeanInstance
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: applyMergedBeanDefinitionPostProcessors
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: addSingletonFactory
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: populateBean
+
+AbstractAutowireCapableBeanFactory -> AbstractAutowireCapableBeanFactory: initializeBean
+
+@enduml
