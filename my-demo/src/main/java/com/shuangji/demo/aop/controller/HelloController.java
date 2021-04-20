@@ -1,6 +1,6 @@
-package com.shuangji.anno.example_02.controller;
+package com.shuangji.demo.aop.controller;
 
-import com.shuangji.anno.example_02.service.HelloService;
+import com.shuangji.demo.aop.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

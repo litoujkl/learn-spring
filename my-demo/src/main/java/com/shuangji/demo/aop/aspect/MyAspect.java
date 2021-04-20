@@ -1,4 +1,4 @@
-package com.shuangji.anno.example_02.aspect;
+package com.shuangji.demo.aop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyAspect {
 
-	@Pointcut("execution(* com.shuangji.anno.example_02.service..*(..))")
+	@Pointcut("execution(* com.shuangji.demo.aop.service..*(..))")
 	public void embed() {
 	}
 

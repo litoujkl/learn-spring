@@ -1,4 +1,4 @@
-package com.shuangji.anno.example_01;
+package com.shuangji.demo.ioc;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

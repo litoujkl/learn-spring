@@ -1,4 +1,4 @@
-package com.shuangji.anno.example_02.service;
+package com.shuangji.demo.aop.service;
 
 public interface HelloService {
 

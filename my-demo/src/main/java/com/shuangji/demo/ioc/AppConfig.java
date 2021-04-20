@@ -1,9 +1,9 @@
-package com.shuangji.anno.example_01;
+package com.shuangji.demo.ioc;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.shuangji.anno.example_01")
+@ComponentScan("com.shuangji.demo.ioc")
 public class AppConfig {
 }
