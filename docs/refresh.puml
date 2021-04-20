@@ -4,6 +4,9 @@ AbstractApplicationContext -> AbstractApplicationContext: refresh
 AbstractApplicationContext -> AbstractApplicationContext: finishBeanFactoryInitialization
 
 AbstractApplicationContext -> DefaultListableBeanFactory: \npreInstantiateSingletons
+note left
+实例化所有non-lazy singleton
+end note
 
 DefaultListableBeanFactory -> AbstractBeanFactory: \tgetBean
 
