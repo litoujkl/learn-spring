@@ -7,6 +7,13 @@ repositories {
 	gradlePluginPortal()
 }
 
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(11)
+		vendor = JvmVendorSpec.ADOPTOPENJDK
+	}
+}
+
 dependencies {
 	implementation "me.champeau.gradle:japicmp-gradle-plugin:0.2.8"
 	implementation "com.google.guava:guava:28.2-jre" // required by japicmp-gradle-plugin
