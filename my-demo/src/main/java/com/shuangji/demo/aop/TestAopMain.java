@@ -10,9 +10,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan("com.shuangji.demo.aop")
-public class TestMain {
+public class TestAopMain {
 	public static void main(String[] args) {
-		ApplicationContext ac = new AnnotationConfigApplicationContext(TestMain.class);
+		ApplicationContext ac = new AnnotationConfigApplicationContext(TestAopMain.class);
 		HelloController helloController = (HelloController) ac.getBean("helloController");
 		helloController.handleRequest();
 	}
