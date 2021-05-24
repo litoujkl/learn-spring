@@ -1,0 +1,20 @@
+# onStartup
+@startuml
+
+activate AbstractDispatcherServletInitializer
+AbstractDispatcherServletInitializer -[#0000FF]> AbstractContextLoaderInitializer: onStartup
+
+activate AbstractContextLoaderInitializer
+AbstractContextLoaderInitializer -[#0000FF]> AbstractContextLoaderInitializer: registerContextLoaderListener
+
+activate AbstractAnnotationConfigDispatcherServletInitializer
+AbstractContextLoaderInitializer -[#0000FF]> AbstractAnnotationConfigDispatcherServletInitializer: createRootApplicationContext
+
+AbstractDispatcherServletInitializer -[#0000FF]> AbstractDispatcherServletInitializer: registerDispatcherServlet
+
+AbstractDispatcherServletInitializer -[#0000FF]> AbstractAnnotationConfigDispatcherServletInitializer: createServletApplicationContext
+
+AbstractDispatcherServletInitializer -[#0000FF]> AbstractDispatcherServletInitializer: createDispatcherServlet
+
+
+@enduml
