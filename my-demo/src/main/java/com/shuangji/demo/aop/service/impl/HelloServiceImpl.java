@@ -7,7 +7,12 @@ import org.springframework.stereotype.Service;
 public class HelloServiceImpl implements HelloService {
 
 	@Override
+	public void sayHello(String msg) {
+		System.out.println("hello, " + msg);
+	}
+
+	@Override
 	public void sayHello() {
-		System.out.println("Hello, everyone!");
+		System.out.println("hello.");
 	}
 }

@@ -23,8 +23,9 @@ public class MyAspect {
 		System.out.println("MyAspect after() called: " + joinPoint.getSignature().getName());
 	}
 
-	@Around("embed()")
-	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+	// passing parameters to advice
+	@Around("embed() && args(msg)")
+	public void around(ProceedingJoinPoint joinPoint, String msg) throws Throwable {
 		System.out.println("****MyAspect.around(): " + joinPoint.getSignature().getName() + ": Before Method Execution");
 		try {
 			joinPoint.proceed();

@@ -11,6 +11,6 @@ public class HelloController {
 	private HelloService helloService;
 
 	public void handleRequest() {
-		helloService.sayHello();
+		helloService.sayHello("spring aop");
 	}
 }
