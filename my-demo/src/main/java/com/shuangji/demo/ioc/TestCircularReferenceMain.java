@@ -6,6 +6,7 @@ public class TestCircularReferenceMain {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ac
 				= new AnnotationConfigApplicationContext(AppConfig.class);
-		System.err.println(ac.getBean(Boyfriend.class));
+		Boyfriend boyfriend = ac.getBean(Boyfriend.class);
+		boyfriend.say();
 	}
 }

@@ -8,4 +8,8 @@ public class Boyfriend {
 
 	@Autowired
 	private Girlfriend girlfriend;
+
+	public void say() {
+		System.out.println("hi, girlfriend");
+	}
 }
