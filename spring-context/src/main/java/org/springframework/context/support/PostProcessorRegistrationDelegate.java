@@ -144,7 +144,7 @@ final class PostProcessorRegistrationDelegate {
 			}
 
 			// Now, invoke the postProcessBeanFactory callback of all processors handled so far.
-			invokeBeanFactoryPostProcessors(registryProcessors, beanFactory);
+			invokeBeanFactoryPostProcessors(registryProcessors, beanFactory); // @Configuration标记的类xxx的BeanDefinition在这里beanClass变为xxx$$EnhancerBySpringCGLIB...
 			invokeBeanFactoryPostProcessors(regularPostProcessors, beanFactory);
 		}
 
